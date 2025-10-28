@@ -12,6 +12,8 @@ RUN python3 -m venv /opt/venv && \
     /opt/venv/bin/pip install --upgrade pip && \
     /opt/venv/bin/pip install typhoon-ocr
 
+# เพิ่ม virtual environment ลงใน PATH
+ENV PATH="/opt/venv/bin:$PATH"
 
 # ตั้งค่า Base URL ของ n8n ให้ตรงกับ ngrok
 ENV N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL}
@@ -24,4 +26,3 @@ USER node
 
 # ทำงานในโฟลเดอร์ /home/node
 WORKDIR /home/node
-
