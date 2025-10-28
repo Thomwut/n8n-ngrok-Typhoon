@@ -1,0 +1,22 @@
+FROM n8nio/n8n:latest
+
+USER root
+
+# Install Python และ packages ที่จำเป็น
+RUN apk add --no-cache \
+    python3 py3-pip \
+    poppler-utils
+
+# สร้าง virtual environment และติดตั้ง typhoon-ocr
+RUN python3 -m venv /opt/venv && \
+    /opt/venv/bin/pip install --upgrade pip && \
+    /opt/venv/bin/pip install typhoon-ocr
+
+
+# ตั้งค่า Base URL ของ n8n ให้ตรงกับ ngrok
+ENV N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL}
+
+USER node
+
+# ทำงานในโฟลเดอร์ /data
+WORKDIR /data
