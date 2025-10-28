@@ -16,12 +16,11 @@ RUN python3 -m venv /opt/venv && \
 # ตั้งค่า Base URL ของ n8n ให้ตรงกับ ngrok
 ENV N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL}
 
-USER node
-
-
 # สร้าง directories และกำหนด permission
 RUN mkdir -p /data /doc && \
     chown -R node:node /data /doc
+
+USER node
 
 # ทำงานในโฟลเดอร์ /home/node
 WORKDIR /home/node
