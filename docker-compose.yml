@@ -11,7 +11,6 @@ services:
     ports:
       - "5566:5678"
     environment:
-      - N8N_HOST=0.0.0.0
       - N8N_PORT=5678
       - WEBHOOK_URL=${NGROK_URL}
       - N8N_EDITOR_BASE_URL=${NGROK_URL}
