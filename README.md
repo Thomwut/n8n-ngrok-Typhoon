@@ -6,6 +6,7 @@
 
 1. **รันครั้งแรก**:
    ```bash
+   docker-compose build 
    docker-compose up -d
    ```
 
@@ -22,14 +23,15 @@
 
 ```bash
 # เริ่มใช้งาน
+docker-compose build
 docker-compose up -d
 
 # รีสตาร์ทหลังเปลี่ยน webhook URL
-docker-compose restart n8n
+docker-compose restart n8n-ngrok-Typhoon
 
 # หยุดการทำงาน
 docker-compose down
 
 # ดู logs
-docker-compose logs n8n
+docker-compose logs n8n-ngrok-Typhoon
 ```

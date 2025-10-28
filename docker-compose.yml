@@ -20,10 +20,15 @@ services:
       - N8N_BASIC_AUTH_PASSWORD=secretpassword
       - TYPHOON_OCR_API_KEY=0arzXoosKQJUmzahAVNFwTcRdewrCftgRPaWKgOKANyswtod
       - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=false
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+      - N8N_LICENSE_ACTIVATION_KEY=${N8N_LICENSE_ACTIVATION_KEY}
     volumes:
       - n8n_data:/home/node/.n8n
-      - "./uploads:/home/node/uploads"
-      - "./data:/data"
+      - ./local-file:/file
+      - ./uploads:/home/node/uploads
+      - ./data:/data
+      - ./doc:/doc
+
     user: "1000:1000"
 
 volumes:
