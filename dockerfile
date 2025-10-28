@@ -18,5 +18,11 @@ ENV N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL}
 
 USER node
 
-# ทำงานในโฟลเดอร์ /data
-WORKDIR /data
+
+# สร้าง directories และกำหนด permission
+RUN mkdir -p /data /doc && \
+    chown -R node:node /data /doc
+
+# ทำงานในโฟลเดอร์ /home/node
+WORKDIR /home/node
+
