@@ -19,7 +19,7 @@ ENV PATH="/opt/venv/bin:$PATH"
 ENV N8N_WEBHOOK_URL=${N8N_WEBHOOK_URL}
 
 # สร้าง directories และกำหนด permission
-RUN mkdir -p /data /doc && \
+RUN mkdir -p /data /doc /doc/{multipage, output, tmp} && \
     chown -R node:node /data /doc
 
 USER node
