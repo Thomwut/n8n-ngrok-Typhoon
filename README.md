@@ -13,10 +13,10 @@
 2. **ตั้งค่า webhook URL**:
    - แก้ไข `NGROK_URL` ในไฟล์ `.env` 
    - เช่น: `NGROK_URL=https://abc123.ngrok-free.app`
-   - รีสตาร์ท: `docker-compose restart n8n`
+   - รีสตาร์ท: `docker-compose restart n8n-ngrok-Typhoon`
 
 3. **เข้าใช้งาน**:
-   - Local: http://localhost:5678
+   - Local: http://localhost:5566
    - หรือใช้ ngrok URL ที่ตั้งค่าไว้
 
 ## คำสั่งที่ใช้บ่อย
