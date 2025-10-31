@@ -15,7 +15,11 @@
    - เช่น: `NGROK_URL=https://abc123.ngrok-free.app`
    - รีสตาร์ท: `docker-compose restart n8n-ngrok-Typhoon`
 
-3. **เข้าใช้งาน**:
+3. **เปิดใช้งาน ngrok**
+   - เปิด Terminal ใน Folder ที่ clone git ลงมา
+   - run command "ngrok http --url=your-ngrok-url portXXXX" 
+
+4. **เข้าใช้งาน**:
    - Local: http://localhost:5566
    - หรือใช้ ngrok URL ที่ตั้งค่าไว้
 
